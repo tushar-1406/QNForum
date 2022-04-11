@@ -7,7 +7,15 @@ let new_question=document.getElementById("new_question");
 let submit=document.getElementById('submit');
 let search=document.getElementById('search');
 
-var questions=[];
+// var questions=[{subject:'Javascript', description: 'what is a javascript?', responses:[{nameform: 'Tushar', commentform: 'javascript is a synchronus and a single-threaded language '}]},
+
+// {subject: 'React', description: 'What are advantages of using REACT?\n', responses: [{nameform: 'Tushar', commentform: 'Use of Virtual DOM to improve efficiency,\nGentle learning curve,\nReusable components.'}]},
+// {subject: 'Javascript', description: 'what is hoisting?', responses: [{nameform: 'Tushar', commentform: 'Hoisting is a default behaviour of javascript wher…iable and function declarations are moved on top.'}]},
+// {subject: 'Javascript', description: 'Difference between “ == “ and “ === “ operators.', responses: [{nameform: 'Manik', commentform: 'Both are comparison operators. The difference betw… “ === “ is used to compare both value and types.'}]}, 
+// {subject: 'ACID ', description: 'What is meant by ACID properties in DBMS?', responses: [{nameform: 'Rahul', commentform: 'ACID stands for Atomicity, Consistency, Isolation,… secure way of sharing data among multiple users.'}]}
+// ];
+var questions=[]
+// localStorage.setItem('arr',JSON.stringify(questions))
 display();
 var right1=document.createElement("div");
 right1.innerHTML=right.innerHTML;
@@ -52,12 +60,22 @@ function display ()
     input.innerHTML="";
      var data = JSON.parse(localStorage.getItem('arr'));
      
-   if(data==null)
+   if(data==null && questions==[])
    {
-       return ;
+       return;
    }
-   questions=data;
-data.forEach(function( element,i) {
+   else if(data!=null)
+   {
+       questions=data;
+
+
+   }
+   else{
+       questions=questions
+       
+   }
+
+questions.forEach(function( element,i) {
     
 
 
